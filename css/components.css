@@ -396,6 +396,62 @@
   justify-content: space-between;
 }
 
+.artist-badge strong,
+.artist-badge span {
+  display: block;
+}
+
+.artist-badge strong {
+  font-size: 1.05rem;
+}
+
+.artist-badge span {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.artist-stats {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.artist-stats strong,
+.artist-stats span {
+  display: block;
+}
+
+.artist-stats strong {
+  color: var(--accent-red);
+  font-family: var(--font-display);
+  font-size: 2rem;
+}
+
+.artist-stats span {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.service-mark {
+  color: var(--accent-red);
+  font-size: 1.75rem;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.double-bezel h3,
+.step-card h3 {
+  margin-bottom: 8px;
+}
+
 /* --------------------------------------------------------------------------
    5. Process Stepper (6 Steps)
    -------------------------------------------------------------------------- */
@@ -454,6 +510,53 @@
   color: var(--accent-red);
   display: grid;
   place-items: center;
+}
+
+.hygiene-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.hygiene-list {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  margin-top: 24px;
+}
+
+.hygiene-list li {
+  align-items: center;
+  color: var(--text-main);
+  display: flex;
+  gap: 10px;
+}
+
+.hygiene-list svg {
+  flex: 0 0 auto;
+}
+
+.hygiene-image {
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.hygiene-image img {
+  display: block;
+  width: 100%;
+}
+
+.faq-heading {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.faq-heading p,
+.contact-section p {
+  margin-inline: auto;
 }
 
 /* FAQ Accordion */
@@ -574,6 +677,14 @@
   margin-bottom: 22px;
 }
 
+.quote-box .form-label {
+  margin-top: 22px;
+}
+
+.quote-box .form-label:first-of-type {
+  margin-top: 0;
+}
+
 .form-label {
   display: block;
   font-size: 0.9rem;
@@ -624,6 +735,38 @@
   background: var(--accent-red-subtle);
   border-color: var(--accent-red);
   color: var(--text-main);
+}
+
+.wizard-actions,
+.contact-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.contact-section {
+  background: var(--bg-dark);
+  text-align: center;
+}
+
+.contact-section .container {
+  max-width: 780px;
+}
+
+.contact-actions {
+  justify-content: center;
+  margin-top: 36px;
+}
+
+footer {
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  padding-block: 40px;
+  text-align: center;
 }
 
 /* Floating WhatsApp Button */
@@ -689,6 +832,9 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .hygiene-grid {
     grid-template-columns: 1fr;
   }
   .process-grid {
@@ -758,6 +904,9 @@
   .trust-grid,
   .placement-grid {
     grid-template-columns: 1fr;
+  }
+  .placement-grid.two-columns {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
