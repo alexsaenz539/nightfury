@@ -1,0 +1,245 @@
+/* ==========================================================================
+   Night Fury Tattoo - Core Design System & Tokens (Anti-Slop CSS)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+
+:root {
+  /* Color Palette */
+  --bg-dark: #0D0C0B;
+  --bg-surface: #0D0C0B;
+  --bg-panel: #0D0C0B;
+  --bg-panel-elevated: #0D0C0B;
+  
+  --border-subtle: rgba(242, 237, 235, 0.12);
+  --border-medium: rgba(242, 237, 235, 0.24);
+  --border-red: rgba(242, 237, 235, 0.45);
+
+  --accent-red: #F2EDEB;
+  --accent-red-hover: #F2EDEB;
+  --accent-red-glow: rgba(242, 237, 235, 0.28);
+  --accent-red-subtle: rgba(242, 237, 235, 0.12);
+
+  --text-main: #F2EDEB;
+  --text-muted: rgba(242, 237, 235, 0.72);
+  --text-dim: rgba(242, 237, 235, 0.5);
+
+  /* Typography */
+  --font-display: 'Syne', -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --max-width: 1280px;
+  --header-height: 76px;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-smooth: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Reset & Base Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  background-color: var(--bg-dark);
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background-color: var(--bg-dark);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography Scale */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--text-main);
+}
+
+h1 {
+  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+  font-weight: 700;
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 65ch;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.25s var(--ease-out-expo);
+}
+
+/* Layout Utilities */
+.container {
+  width: min(calc(100% - 40px), var(--max-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: clamp(70px, 10vw, 130px);
+  position: relative;
+}
+
+.section-divider {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Eyebrow & Badges */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-red);
+  margin-bottom: 12px;
+}
+
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-red);
+  box-shadow: 0 0 10px var(--accent-red);
+}
+
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(242, 237, 235, 0.04);
+  border: 1px solid var(--border-medium);
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  backdrop-filter: blur(10px);
+}
+
+/* Buttons System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s var(--ease-out-expo), background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--accent-red);
+  color: #0D0C0B;
+  box-shadow: 0 4px 24px var(--accent-red-glow);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-red-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(242, 237, 235, 0.45);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background: rgba(242, 237, 235, 0.05);
+  border-color: var(--border-medium);
+  color: var(--text-main);
+  backdrop-filter: blur(12px);
+}
+
+.btn-secondary:hover {
+  background: rgba(242, 237, 235, 0.1);
+  border-color: rgba(242, 237, 235, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(13, 12, 11, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .btn-icon-wrapper {
+  transform: translateX(3px);
+}
+
+/* Double-Bezel (Doppelrand) Architecture */
+.double-bezel {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+  padding: 8px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.double-bezel-inner {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 24px;
+  height: 100%;
+  box-shadow: inset 0 1px 1px rgba(242, 237, 235, 0.05);
+}
+
+.double-bezel:hover {
+  border-color: var(--border-medium);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
+    width: min(calc(100% - 28px), var(--max-width));
+  }
+  .section {
+    padding-block: 55px;
+  }
+}
