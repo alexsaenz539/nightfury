@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import Admin from './Admin.jsx';
 
 const works = [
   ['blackwork', 'Dragon Wing Throat Emblem', 'Blackwork / Sharp Lines', 'Pieza emblemática en cuello con alas de dragón oscuras y silueta afilada. Alta saturación y contraste.', 'dragon-wing-neck.png', 'Dragon Wing Neck Emblem'],
@@ -36,6 +37,7 @@ const Arrow = () => <span className="btn-icon-wrapper">→</span>;
 const Check = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-red)" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>;
 
 export default function App() {
+  if (window.location.pathname.startsWith('/admin')) return <Admin />;
   const [menuOpen, setMenuOpen] = useState(false);
   const [filter, setFilter] = useState('all');
   const [selectedWork, setSelectedWork] = useState(null);
