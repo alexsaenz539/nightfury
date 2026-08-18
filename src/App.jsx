@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Admin from './Admin.jsx';
-import { CardCoverFlow } from '@/components/cards/CardCoverFlow';
+// import { CardCoverFlow } from '@/components/cards/CardCoverFlow';
 import { getPublicContent } from './lib/public-content.js';
 
 const steps = [
