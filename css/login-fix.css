@@ -38,3 +38,36 @@
   filter: grayscale(1);
   opacity: 0.46;
 }
+
+/* The admin uses a pale canvas; do not inherit the landing's low-contrast copy colors. */
+.admin-shell .admin-kicker {
+  color: #675f5a !important;
+}
+
+.admin-shell .admin-panel > p,
+.admin-shell .admin-panel p,
+.admin-shell .work-card p,
+.admin-shell .admin-content .empty {
+  color: #514a46 !important;
+  opacity: 1;
+}
+
+.admin-shell .form-field > span,
+.admin-shell .form-field > span small {
+  color: #302b28 !important;
+  opacity: 1;
+}
+
+.admin-shell .form-field input,
+.admin-shell .form-field textarea,
+.admin-shell .form-field select {
+  color: #211d1b !important;
+  background: #fffefd;
+  border-color: #bfb6b0;
+}
+
+.admin-shell .form-field input::placeholder,
+.admin-shell .form-field textarea::placeholder {
+  color: #625b56;
+  opacity: 1;
+}

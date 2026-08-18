@@ -187,8 +187,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 28px;
   width: 28px;
   height: 28px;
+  line-height: 1;
+  font-size: 1rem;
   border-radius: 50%;
   background: rgba(13, 12, 11, 0.25);
   transition: transform 0.3s ease;
